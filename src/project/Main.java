@@ -1,7 +1,6 @@
 //jinhong@inje.ac.kr
 
 package project;
-<<<<<<< HEAD
 import java.io.RandomAccessFile;
 import java.io.*;
 import java.util.Scanner;
@@ -14,8 +13,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.text.SimpleDateFormat;
 import java.nio.file.*;
-=======
->>>>>>> 09c775b16f59a7da8731617500053b4ecabd5816
 
 
 /* 
@@ -29,7 +26,6 @@ import java.nio.file.*;
 
 public class Main {
     
-<<<<<<< HEAD
     static File[] workingFiles;
     static int count = 0;
     static Scanner scan;
@@ -313,38 +309,4 @@ public class Main {
             }
         }
     }
-=======
-    public static void main(String[] args) {
-        
-        int[] intArray = new int[30];
-        int[] index = new int[30];
-        
-        for (int i = 0; i <= 29; i++) {
-            intArray[i] = 1000 + 1 + i;
-        }
-        
-        String[] Num = new String[3];
-        
-        Num[0] = "Zero";
-        Num[1] = "One";
-        Num[2] = "Two";
-        Num[2] = "Three";
-        
-        int ii = 0;
-        for (int number : intArray) {
-            
-            index[ii] = number % 4;
-            
-            try {
-                System.out.format("%d : %d > %s\n", ii, intArray[ii], Num[index[ii]]);
-                
-            } 
-            catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("");
-            }
-                
-            ii += 1;
-        }
-    }
->>>>>>> 09c775b16f59a7da8731617500053b4ecabd5816
 }
