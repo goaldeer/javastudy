@@ -50,8 +50,6 @@ public class Book {
     
     public void showMain() throws InterruptedException {
     while (true) {
-        System.out.format("현재 [%d]권의 도서가 등록되어 있습니다.\n", bookList.size());
-        System.out.format("등록된 도서의 평균 가격은 %d원 입니다.");
         System.out.println("[1] 도서 등록\n[2] 등록 도서 조회\n[3] 도서 정보 업데이트\n[4] 도서 삭제\n[5] 프로그램 종료\n");
         String userInput = sc.nextLine();
  
@@ -74,6 +72,7 @@ public class Book {
                 
         case ("5"):
             System.out.println("프로그램 종료");
+            Main.writer();
             sc.close();
             System.exit(0);
                 
@@ -134,7 +133,9 @@ public class Book {
                 break; // 초기메뉴로 이동
             } // if-else end
         } // end while
- 
+        
+        Main.writer();
+        
         Thread.sleep(1000);
     }// end main
     
@@ -166,7 +167,7 @@ public class Book {
         } // while end
     }// end selectAll
  
-    public void updateBook() {
+    public void updateBook() throws InterruptedException {
         
         while (true) {
             
@@ -203,6 +204,7 @@ public class Book {
                 
             }
         } // end while
+        Main.writer();
     }
     
     public void deletebook() {

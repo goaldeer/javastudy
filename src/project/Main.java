@@ -20,9 +20,17 @@ import java.util.List;
 
 public class Main {
     
+    static int price = 0;
+    
     public static void main(String[] args) throws InterruptedException {
         
         Book book = new Book();
+        reader();
+        System.out.format("현재 [%d]권의 도서가 등록되어 있습니다.\n", Book.bookList.size());
+        
+        if (Book.bookList.size() != 0) {
+            System.out.format("등록된 도서의 평균 가격은 %d원 입니다.\n", price / Book.bookList.size());
+        }
         book.showMain();
     }
     
@@ -31,19 +39,19 @@ public class Main {
             String createfile="/workspace/JAVA_study/csvfile.csv";
             FileWriter fw = new FileWriter(createfile);
 
-            fw.append("NO");
-            fw.append(',');
-            fw.append("TIME");
-            fw.append(',');
-            fw.append("Vib1");
-            fw.append('\n');
-            
-            for(true) {
-                fw.append();
-                fw.append();
-                
+            for (int i = 0; i < Book.bookList.size(); i++) {
+                fw.append(Book.bookList.get(i).getbNo());
+                fw.append(',');
+                fw.append(Book.bookList.get(i).getbTitle());
+                fw.append(',');
+                fw.append(Book.bookList.get(i).getbAuthor());
+                fw.append(',');
+                fw.append(Book.bookList.get(i).getbPrice());
+                if (i != Book.bookList.size() - 1) {
+                    fw.append('\n');
+                }
             }
-
+            
             fw.flush();
             fw.close();
         } catch (Exception e) {
@@ -56,6 +64,8 @@ public class Main {
         //List<List<String>> ret = new ArrayList<List<String>>();
         BufferedReader br = null;
         
+        price = 0;
+        
         try{
             br = Files.newBufferedReader(Paths.get(path));
             //Charset.forName("UTF-8");
@@ -67,12 +77,14 @@ public class Main {
                 String array[] = line.split(",");
                 //배열에서 리스트 반환
                 tmpList = Arrays.asList(array);
-                System.out.println(tmpList);
+                //System.out.println(tmpList);
                 Book bb = new Book();
                 bb.setbNo(array[0]);
                 bb.setbTitle(array[1]);
                 bb.setbAuthor(array[2]);
                 bb.setbPrice(array[3]);
+                
+                price = price + Integer.parseInt(array[3]);
                 
                 Book.bookList.add(bb);
                 //ret.add(tmpList);
