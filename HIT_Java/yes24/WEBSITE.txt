@@ -1,0 +1,22 @@
+//jinhong@inje.ac.kr
+
+package project;
+
+public class WEBSITE {
+    
+    private String url;
+    
+    public WEBSITE() {
+        
+    }
+    
+    private WEBSITE(String init_url) {
+        url = init_url;
+    }
+    
+    public static void main(String args[]) {
+        
+        WEBSITE yes24 = new WEBSITE("www.yes24.com");
+        
+    }
+}

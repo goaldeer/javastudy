@@ -1,0 +1,28 @@
+//jinhong@inje.ac.kr
+
+package project;
+
+public class YES24 extends WEBSITE {
+    
+    public YES24() {
+        Book B9791196075170 = new Book("운다고 달라지는 일은 아무것도 없겠지만", "", "박준", 9791196075170l, 10800, 600, 8.8f);
+        System.out.println(B9791196075170.getAsList()[2]);
+    }
+    
+    public void creat_Book() {
+        
+    }
+    
+    public void read_Book() {
+        
+    }
+    
+    public void update_Book() {
+        
+    }
+    
+    public void delete_Book() {
+        
+    }
+    
+}

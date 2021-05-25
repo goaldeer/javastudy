@@ -1,0 +1,104 @@
+//jinhong@inje.ac.kr
+
+package project;
+
+import java.util.List;
+
+public class Book {
+    
+    // 책 이름
+    private String gd_name = null;
+    // 책 소제목
+    private String gd_nameE = null;
+    // 작가
+    private String gd_auth = null;
+    // ISBN13
+    private Long ISBN13 = null;
+    // 책 Normal 가격
+    private int nor_price = null;
+    // 포인트
+    private int yes_m = null;
+    // 책 별점
+    private float spanGdRating = null;
+    
+    public Book(String title, String subTitle, String auther, Long ISBN, int price, int point, float rating) {
+        gd_name = title;
+        gd_nameE = subTitle;
+        gd_auth = auther;
+        ISBN13 = ISBN;
+        nor_price = price;
+        yes_m = point;
+        spanGdRating = rating;
+    }
+    
+    public List<String> getAsList() {
+        List<String> list = new ArrayList<>();
+        list.add(gd_name);
+        list.add(gd_nameE);
+        list.add(gd_auth);
+        list.add(ISBN13);
+        list.add(nor_price);
+        list.add(yes_m);
+        list.add(spanGdRating);
+        
+        return list;
+    }
+    
+    public void setTitle(String title) {
+        gd_name = title;
+    }
+    
+    public String getTitle() {
+        return gd_name;
+    }
+    
+    public void setSubTitle(String subTitle) {
+        gd_nameE = subTitle;
+    }
+    
+    public String getSubTitle() {
+        return gd_nameE;
+    }
+    
+    public void setAuth(String auther) {
+        gd_auth = auther;
+    }
+    
+    public String getAuth() {
+        return gd_auth;
+    }
+    
+    // critical set, private
+    private void setISBN(Long ISBN) {
+        ISBN13 = ISBN;
+    }
+    
+    public Long getISBN() {
+        return ISBN13;
+    }
+    
+    public void setPrice(int Price) {
+        nor_price = Price;
+    }
+    
+    public int getPrice() {
+        return nor_price;
+    }
+    
+    public void setPoint(int Point) {
+        yes_m = Point;
+    }
+    
+    public int getPoint() {
+        return yes_m;
+    }
+    
+    public void setRating(float Rating) {
+        spanGdRating = Rating;
+    }
+    
+    public float getRating() {
+        return spanGdRating;
+    }
+    
+}
